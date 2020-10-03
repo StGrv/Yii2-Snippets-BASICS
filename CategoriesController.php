@@ -14,28 +14,9 @@ use yii\filters\AccessControl ;
 
 class CategoriesController extends Controller {
     
-    public function actionIndex() {
-        
-       $categories = Categories::find()->all() ;   
-        
-       return $this->render('index', ['categories' => $categories]) ;
-    }
-    
-    public function actionView($id) {
-        
-        $categories = Categories::findOne(['id' => $id]) ;
-        return $this->render('view', ['categories' => $categories]) ;
-    }
-    
-    public function actionSearch() {
-        
-        return $this->render('_search') ;
-        
-    }
-    
     // First way of limiting pages access using AccessControl
     public function behaviors() {
-        
+
         return [
            'access' => [
                'class' =>AccessControl::className(),
@@ -58,12 +39,6 @@ class CategoriesController extends Controller {
             return $this->redirect(['/site/login'])
         }
     }
-    
-    
 
-    
-    
-    
 } // End
-
 ?>
