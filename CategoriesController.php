@@ -32,7 +32,7 @@ class CategoriesController extends Controller {
         ] ;
     }
     
-    // First way of limiting pages access using AccessControl
+    // Second way of limiting pages access using AccessControl
     public function actionView($id) {
         
         if (\Yii::$app->user->isGuest) {
