@@ -1,5 +1,4 @@
 <?php
-
 namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
@@ -34,11 +33,10 @@ class CategoriesController extends Controller {
     
     // Second way of limiting pages access using AccessControl
     public function actionView($id) {
-        
         if (\Yii::$app->user->isGuest) {
             return $this->redirect(['/site/login'])
         }
     }
 
-} // End
+} // End of the controller
 ?>
