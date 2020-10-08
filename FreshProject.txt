@@ -1,0 +1,27 @@
+// 				A MUST DO steps for a fresh project:
+
+1. Install using composer - We need the composer.phar file.
+2. Afterwards run 'php init'.
+3. Add .htaccess for both @frontend and @backend.
+4. Enable urlManager for pretty urls from main.php in both @frontend and @backend.
+5. Automatically remove css/js files' caching using the following code, so whenever we update our css it will take an immediate effect in the website:
+Go to either @frontend||@backend/main.php -> 'assetManager' => [
+            		   'appendTimestamp' => true
+6. Configure DB - \common\config\main-local.php
+7. We can set a rule in the main.php urlManager to remove the controller url symbols like ?%.
+Example: http://localhost/Yii2ytclone/advanced/backend/web/video/update/mNto4YqZ
+Old & Bad looking url: http://localhost/Yii2ytclone/advanced/backend/web/video/update?id=mNto4YqZ
+
+--main.php--
+'urlManager' => [
+	//...
+        'rules' => [
+            'video/update/<id>' => 'video/update',
+        ],
+    ],
+
+8. If we are going to be using bootstrap4 instead of the default one which is bootstrap3 use the following code:
+INSTALL bootstrap4: composer require yiisoft/yii2-bootstrap4
+REMOVE bootstrap3: composer remove yiisoft/yii2-bootstrap
+
+When this is done we must replace everywhere 'bootstrap' with 'bootstrap4' to get it running and remove the errors.
