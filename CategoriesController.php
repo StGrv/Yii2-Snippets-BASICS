@@ -32,7 +32,7 @@ class CategoriesController extends Controller
     /**
      * Lists all Categories models.
      * @return mixed
-     */
+     */ 
     public function actionIndex()
     {
         $searchModel = new CategoriesSearch();
