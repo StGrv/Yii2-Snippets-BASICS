@@ -57,3 +57,4 @@
         {
             return mb_strlen( $string ) > $end ? mb_substr( $string, $start, $end, $encoding ) . '...' : $string;
         }
+ 
